@@ -1,11 +1,12 @@
 import Image from "next/image";
 import styles from "./singlePost.module.css";
+import PostUser from "@/components/postUser/PostUser";
 
 const SinglePost = async ({ params }) => {
   const { slug } = params;
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
   const post = await res.json();
-  console.log(post);
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -21,10 +22,7 @@ const SinglePost = async ({ params }) => {
             width={50}
             height={50}
           />
-          <div className={styles.detailText}>
-            <span className={styles.detailTitle}>Author :-</span>
-            <span className={styles.detailValue}>Sudhansu Panda</span>
-          </div>
+          <PostUser userId={post.userId} />
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>01.01.2024</span>

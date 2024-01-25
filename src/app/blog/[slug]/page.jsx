@@ -1,14 +1,18 @@
 import Image from "next/image";
 import styles from "./singlePost.module.css";
 
-const SinglePost = () => {
+const SinglePost = async ({ params }) => {
+  const { slug } = params;
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+  const post = await res.json();
+  console.log(post);
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image src="/pexels1.jpg" alt="" fill className={styles.img} />
       </div>
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>Title</h1>
+        <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.detail}>
           <Image
             src="/profile.jpg"
@@ -26,12 +30,7 @@ const SinglePost = () => {
             <span className={styles.detailValue}>01.01.2024</span>
           </div>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sit
-          accusantium error, minus accusamus assumenda, debitis molestiae
-          corrupti veritatis aspernatur possimus autem fugiat quaerat? Itaque
-          maxime repellendus sapiente repudiandae id?
-        </p>
+        <p>{post.body}</p>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@
   position: relative;
 }
 .img{
-  object-fit: contain;
+  object-fit: cover;
 }
 .date{
   font-size: 15px;
@@ -24,7 +24,6 @@
 .bottom{
   display: flex;
   flex-direction: column;
-  margin-left: 3%;
 }
 .title{
   font-size: 20px;

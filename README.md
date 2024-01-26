@@ -1,3 +1,7 @@
+---
+marp: false
+---
+
 # BlogApp
 
 This is a Social media webapp.
@@ -22,10 +26,10 @@ You can start editing the page by modifying app/page.js. The page auto-updates a
 
 ## Screenshots
 
-![Home Page](HomePage.png)
-![About Page](AboutPage.png)
-![Contact Page](ContactPage.png)
-![Blog Page](BlogPage.png)
+![Home Page](/public/HomePage.png)
+![About Page](/public/AboutPage.png)
+![Contact Page](/public/ContactPage.png)
+![Blog Page](/public/BlogPage.png)
 
 ## Tech Stack
 
